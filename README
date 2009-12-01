@@ -1,15 +1,60 @@
-== hCalTimeline
+== FauxSelect
 
-hCalTimeline description to come.
+This script builds a stylable, accessible SELECT replacement.
 
 == Current Version
 
-0.1 (27 August 2009)
+0.2 (4 August 2007)
 
 == Requirements
 
-None.
+  * Prototype
+  * mod.Moo.fx (bundled)
 
 == License
 
-hCalTimeline is distributed under the liberal MIT License.
+FauxSelect is distributed under the liberal MIT License.
+
+== Use
+
+To use, simply include FauxSelect.js and mod-moo.fx.js in the HEAD of your document and store FauxSelect.css in the same folder as FauxSelect.js. Then, initialize the FauxSelectConductor:
+
+// if Prototype, selects & required DOM methods are available
+if( typeof( FauxSelectConductor ) != 'undefined' &&
+    typeof( Prototype ) != 'undefined' &&
+    typeof( Fx ) != 'undefined' &&
+    document.getElementById &&
+    document.getElementsByTagName &&
+    document.createElement &&
+    document.getElementsByTagName( 'select' ) ){
+  window.observe( 'load', function(){
+    FauxSelectConductor.initialize( { maxHeight: 300 } );
+  } );
+}
+
+You can supply a maximum height when initializing the FauxSelectConductor.
+
+== Customization
+
+To customize the look of your FauxSelect, you can hook into the following selectors in your main stylesheet (default styles have been provided and are easily overridden with greater specificity):
+
+  * .faux-container - contains the whole widget
+  * p.faux-value - the displayed value
+  * .faux-container p.focused - the displayed value when the faux-SELECT has focus
+  * ul.faux-select - the list of faux-OPTIONS
+  * ul.faux-select li - the faux-OPTIONs
+  * ul.faux-select .hover - a faux-OPTION in it's hover state
+  * ul.faux-select .selected - a faux-OPTION in it's selected state
+
+== How it works
+
+For detailed instructions on how this script works, check out the case study in AdvancED DOM Scripting (2007, Friends of ED)
+
+== Demo
+
+A demo is included in the ./demo directory.
+
+== Change Log
+
+  * 0.1 (12 September 2006) - Initial script
+  * 0.2 (4 August 2007) - Added automatic directory calculation for `FauxSelect.css` inclusion.
