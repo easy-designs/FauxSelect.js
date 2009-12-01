@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>TabInterface</title>
+  <title>FauxSelect</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="http://easy-designs.github.com/github.css" />
 </head>
@@ -10,43 +10,58 @@
   <div id="content">
     <h4 id="logo"><img src="http://easy-designs.github.com/logo.png" alt="Easy! Designs, LLC" /></h4>
 
-    <h1>TabInterface</h1>
-    <p>TabInterface is an unobtrusive JavaScript object that generates an accessible tabbed interface based on heading levels.</p>
+    <h1>FauxSelect</h1>
+    <p>This script builds a stylable, accessible <code class="html">select</code> replacement.</p>
 
     <h2>Current Version</h2>
-    <p>0.4.3 (28 June 2009)</p>
+    <p>0.2 (4 August 2007)</p>
   
     <h2>Requirements</h2>
-    <p>None.</p>
+    <ul>
+      <li><a rel="external" href="http://prototypejs.org">Prototype</a></li>
+      <li>mod.Moo.fx (bundled)</li>
+    </ul>  
   
     <h2>Use</h2>
-    <p>To use, simply include TabInterface.js (found in ./src) and then classify elements you want tabbed as "tabbed". Then add a new anonymous function to your load event (<code class="js">window</code> or DOM) that looks for these elements and passes them to a new instance of <code class="js">TabInterface</code>. For example, using jQuery, you could say:</p>
-  
-    <pre><code class="js">if( typeOf( TabInterface ) != 'undefined' &amp;&amp;
-      document.getElementById &amp;&amp;
-      document.getElementsByTagName &amp;&amp;
-      document.createElement ){
-    $(document).ready(function(){
-      $('.tabbed').each(function(i){
-        new TabInterface( this, i );
-      });
-    });
-  }</code></pre>
+    <p>To use, simply include FauxSelect.js and mod-moo.fx.js in the <code class="html">head</code> of your document and store FauxSelect.css in the same folder as FauxSelect.js. Then, initialize the <code class="js">FauxSelectConductor</code>:</p>
+    <pre><code class="js">// if Prototype, selects &amp; required DOM methods are available
+if( typeof( FauxSelectConductor ) != 'undefined' &amp;&amp;
+    typeof( Prototype ) != 'undefined' &amp;&amp;
+    typeof( Fx ) != 'undefined' &amp;&amp;
+    document.getElementById &amp;&amp;
+    document.getElementsByTagName &amp;&amp;
+    document.createElement &amp;&amp;
+    document.getElementsByTagName( 'select' ) ){
+  window.observe( 'load', function(){
+    FauxSelectConductor.initialize( { maxHeight: 300 } );
+  } );
+}</code></pre>
+    <p>You can supply a maximum height when initializing the <code class="js">FauxSelectConductor</code>.</p>
 
-    <p>Note: Tab labels will be either the header content or the heading's <code class="html">title</code> attribute.</p>
-
+    <h2>Customization</h2>
+    <p>To customize the look of your FauxSelect, you can hook into the following selectors in your main stylesheet (default styles have been provided and are easily overridden with greater specificity):</p>
+    <ul>
+      <li><code class="css">.faux-container</code> - contains the whole widget</li>
+      <li><code class="css">p.faux-value</code> - the displayed value</li>
+      <li><code class="css">.faux-container p.focused</code> - the displayed value when the faux-<code class="html">select</code> has focus</li>
+      <li><code class="css">ul.faux-select</code> - the list of faux-<code class="html">option</code>s</li>
+      <li><code class="css">ul.faux-select li</code> - the faux-<code class="html">option</code>s</li>
+      <li><code class="css">ul.faux-select .hover</code> - a faux-<code class="html">option</code> in its hover state</li>
+      <li><code class="css">ul.faux-select .selected</code> - a faux-<code class="html">option</code> in its selected state</li>
+    </ul>
+    
     <h2>How it works</h2>
-    <p>Content is split using the first heading level (<code class="html">h1</code>-<code class="html">h6</code>) encountered within the "tabbed" container.</p>
+    <p>For detailed instructions on how this script works, check out the case study in <a href="http://www.amazon.com/gp/product/1590598563?ie=UTF8&amp;tag=easydesign-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1590598563">AdvancED DOM Scripting</a> (2007, Friends of ED)</p>
 
     <h2>Demo</h2>
-    <iframe src="latest/demo/index.html" style="border: 0; width: 580px; height: 410px;"></iframe>
+    <iframe src="latest/demo/index.html" style="border: 0; width: 400px; height: 820px;"></iframe>
 
     <h2>Download</h2>
-    <p>Using Git: <code class="terminal">git clone git://github.com/easy-designs/tabinterface.js.git</code></p>
-    <p><a href="http://github.com/easy-designs/tabinterface.js/downloads">Tagged Releases</a></p>
+    <p>Using Git: <code class="terminal">git clone git://github.com/easy-designs/FauxSelect.js.git</code></p>
+    <p><a href="http://github.com/easy-designs/FauxSelect.js/downloads">Tagged Releases</a></p>
     
     <h2>License</h2>
-    <p>TabInterface is distributed under the liberal <a href="latest/MIT-LICENSE">MIT License</a>.</p>
+    <p>FauxSelect is distributed under the liberal <a href="latest/MIT-LICENSE">MIT License</a>.</p>
   </div>  
   
   <p id="copyright">Copyright &copy; 2005-2009 Aaron Gustafson</p>
