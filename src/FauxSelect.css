@@ -1,0 +1,94 @@
+/*------------------------------------------------------------------------------
+Faux-SELECT CSS
+------------------------------------------------------------------------------*/
+
+.faux-container {
+  position: relative;
+}
+.faux-select {
+  background: #fff;
+  border: 1px solid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  position: absolute;
+}
+.faux-select li {
+  cursor: pointer;
+  line-height: 1.25em;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.faux-value {
+  background: #fff;
+  border: 1px solid;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+.closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+li.optgroup {
+  font-weight: bold;
+  font-style: italic;
+  width: 100%;
+  position: relative;
+}
+li.optgroup ul li {
+  list-style: none;
+  padding-left: 10px;
+}
+ul.faux-select.multiple {
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+}
+ul.faux-select.multiple li {
+  position: static;
+}
+ul.faux-select.closed {
+  overflow: hidden;
+}
+ul.faux-select.overflowing-open {
+  overflow: auto;
+  overflow-x: hidden;
+}
+ul.faux-select.overflowing-optgrouped-open {
+  overflow: visible;
+  overflow-y: auto;
+}
+ul.faux-select.optgrouped-open {
+  overflow: visible;
+}
+.faux-select .optgroup ul {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+.faux-select .optgroup.optHover ul {
+  display: block;
+  z-index: 2;
+}
+select.replaced {
+  position: relative;
+  left: -999em;
+}
+
+* html .closer {
+  position: absolute;
+  width: expression( document.body.scrollWidth );
+  height: expression( document.body.scrollHeight );
+}

@@ -1,0 +1,105 @@
+/*------------------------------------------------------------------------------
+Typography CSS
+------------------------------------------------------------------------------*/
+
+/* =GLOBAL RESET */
+* {
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* =REDEFINE HTML */
+body {
+  background: #fbfbfb;
+  padding: 20px;
+  font: 80% "Lucida Sans Unicode", "Lucida Grande", Verdana, Helvetica, sans-serif;
+}
+
+/* =FORMS */
+form {
+  background: #3f6b21;
+  border: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0 10px 10px;
+  width: 17em;
+}
+fieldset {
+  background: #eee url(field.jpg) bottom left repeat-x;
+  border: 1px solid #3f6b21;
+  padding: 10px 0 10px 20px;
+  width: 220px;
+}
+fieldset:after {
+  content: '.';
+  display: block;
+  clear: both;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+/* This should ideally go in an IE6-specific stylesheet
+   linked to inside conditional comments */
+* html fieldset {
+  height: 1%;
+}
+legend {
+  background: #3f6b21;
+  color: #eee;
+  font-size: 1.4em;
+  margin: .5em 0 .5em -20px;
+  padding: 10px 20px;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin: .5em 0 .2em;
+}
+select {
+  border: 1px solid #000;
+  display: block;
+  width: 200px;
+}
+form ol {
+  margin: 0;
+  list-style: none;
+}
+form ol > li {
+  padding: 0 0 1.4em;
+}
+button {
+  background: url(button.png) top left no-repeat;
+  color: #eee;
+  cursor: pointer;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 1em;
+  float: right;
+  margin-right: 20px;
+}
+
+/* =faux-SELECT STYLES */
+ul.faux-select {
+  background: #c4c4c0;
+  margin-top: 18px;
+}
+ul.faux-select .hover,
+ul.faux-select .selected {
+  background: #006;
+  color: #fff;
+}
+p.faux-value {
+  background: url(value.png) top left no-repeat;
+  border: 1px solid;
+  line-height: 18px;
+  width: 175px;
+  padding: 0 20px 0 3px;
+}
+.faux-container p.focused {
+  background-image: url(value-focused.png);
+}

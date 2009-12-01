@@ -1,0 +1,151 @@
+/*------------------------------------------------------------------------------
+Typography CSS
+------------------------------------------------------------------------------*/
+
+/* =GLOBAL RESET */
+* {
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* =REDEFINE HTML */
+body {
+  background: #fbfbfb;
+  padding: 20px;
+  font: 80% "Lucida Sans Unicode", "Lucida Grande", Verdana, Helvetica, sans-serif;
+}
+h1 {
+  font-size: 2em;
+}
+code {
+  font-size: 1.3em;
+}
+
+/* =FORMS */
+form {
+  background: #3f6b21;
+  border: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0 10px 10px;
+  width: 17em;
+}
+legend {
+  background: #3f6b21;
+  color: #eee;
+  font-size: 1.4em;
+  margin: .5em 0 .5em -20px;
+  padding: 10px 20px;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin: .5em 0 .2em;
+}
+input,
+select {
+  border: 1px solid #000;
+  display: block;
+  width: 200px;
+}
+input:focus {
+  background: #fff;
+}
+fieldset {
+  background: #eee url(field.jpg) bottom left repeat-x;
+  border: 1px solid #3f6b21;
+  padding: 10px 0 10px 20px;
+  width: 220px;
+}
+fieldset:after {
+  content: '.';
+  display: block;
+  clear: both;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+* html fieldset {
+  height: 1%;
+}
+optgroup {
+  font-weight: bold;
+  font-style: italic;
+}
+form ol {
+  margin: 0;
+  list-style: none;
+}
+form ol > li {
+  padding: 0 0 1.4em;
+}
+button {
+  background: url(button.png) top left no-repeat;
+  color: #eee;
+  cursor: pointer;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 1em;
+  float: right;
+  margin-right: 20px;
+}
+
+/* =FAUX-select STYLES */
+div.faux-container {
+  padding-bottom: 1.2em;
+}
+* html .faux-container {
+  height: 10px;
+}
+.hover,
+.selected {
+  background: #006;
+  color: #fff;
+}
+ul.faux-select {
+  background: #c4c4c0;
+  margin-top: 18px;
+}
+ul.multiple {
+  background: #ecece7 url(faux-select.png) bottom left repeat-x;
+  margin-top: 0;
+}
+ul.multiple.focused {
+  background: #fff;
+}
+ul.faux-select li {
+  padding: 0;
+}
+p.faux-value {
+  background: url(value.png) top left no-repeat;
+  border: 1px solid;
+  line-height: 18px;
+  width: 175px;
+  padding-left: 3px;
+  padding-right: 20px;
+}
+.faux-container p.focused {
+  background-image: url(value-focused.png);
+}
+li.optgroup {
+  background: url(optgroup.png) right center no-repeat;
+}
+li.optgroup  ul {
+  border: 1px solid;
+  background: #5f8c42;
+  min-width: 100px;
+}
+li.optgroup  li {
+  padding: 2px 3px;
+}
+* html li.optgroup ul {
+  width: 100px;
+}
+.faux-select .optgroup.optHover {
+  background-color: #5f8c42;
+}
